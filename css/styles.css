@@ -77,6 +77,24 @@
   --bs-link-hover-color: #1826c2;
   --bs-code-color: #e21e80;
   --bs-highlight-bg: #fff3cd;
+
+  --primary-color:#fff;
+  --secondary-color:#e4e9f7;
+  --text-color:rgba(0, 0, 0, 0.55);
+  --sidebar-arrow:blue;
+  --dot1-color:#1e30f3;
+  --dot2-color:#fff;
+  --image-filter: none;
+}
+
+.dark-theme{
+  --bs-body-bg:#242526;
+  --secondary-color:#18191a;
+  --text-color:#fff;
+  --sidebar-arrow:#3a3b3c;
+  --dot1-color:#fff;
+  --dot2-color:#1e30f3;
+  --image-filter: brightness(0.6);
 }
 
 *,
@@ -3623,7 +3641,7 @@ textarea.form-control-lg {
   padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
   font-size: var(--bs-nav-link-font-size);
   font-weight: var(--bs-nav-link-font-weight);
-  color: var(--bs-nav-link-color);
+  color: var(--text-color);
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
@@ -3632,9 +3650,9 @@ textarea.form-control-lg {
     transition: none;
   }
 }
-.nav-link:hover, .nav-link:focus {
+/* .nav-link:hover, .nav-link:focus {
   color: var(--bs-nav-link-hover-color);
-}
+} */
 .nav-link.disabled {
   color: var(--bs-nav-link-disabled-color);
   pointer-events: none;
@@ -4172,7 +4190,9 @@ textarea.form-control-lg {
   min-width: 0;
   height: var(--bs-card-height);
   word-wrap: break-word;
-  background-color: var(--bs-card-bg);
+  /* background-color: var(--bs-card-bg); */
+  background-color: var(--secondary-color) !important;
+  color: var(--text-color) !important;
   background-clip: border-box;
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
   border-radius: var(--bs-card-border-radius);
@@ -8094,6 +8114,7 @@ textarea.form-control-lg {
 
 .fw-light {
   font-weight: 200 !important;
+  color: var(--text-color) !important;
 }
 
 .fw-lighter {
@@ -8240,7 +8261,7 @@ textarea.form-control-lg {
 
 .text-muted {
   --bs-text-opacity: 1;
-  color: #6c757d !important;
+  color: var(--text-color) !important;
 }
 
 .text-black-50 {
@@ -8306,7 +8327,7 @@ textarea.form-control-lg {
 
 .bg-light {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+  background-color: var(--bs-body-bg) !important;
 }
 
 .bg-dark {
@@ -8321,7 +8342,7 @@ textarea.form-control-lg {
 
 .bg-white {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
+  background-color: var(--secondary-color) !important;
 }
 
 .bg-body {
@@ -11735,4 +11756,67 @@ html {
 
 a{
   text-decoration: none;
+}
+
+
+/*page loader*/
+.loader_bg{
+    position: fixed;
+    z-index: 999999;
+    background: var(--primary-color);
+    width: 100%;
+    height: 100%;
+}
+.loader{
+    border: 0 soild transparent;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: calc(50vh - 75px);
+    left: calc(50vw - 75px);
+}
+.loader:before, .loader:after{
+    content: '';
+    border: 1em solid #ff5733;
+    border-radius: 50%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: loader 2s linear infinite;
+    opacity: 0;
+}
+.loader:before{
+    animation-delay: .5s;
+}
+@keyframes loader{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.resumeBtn{
+  color: #fff !important;
+}
+.projectsBtn{
+  color: var(--text-color) !important;
+  border-color: var(--text-color) !important;
+}
+
+.theme{
+  cursor: pointer;
+}
+
+.profile-img{
+  filter: var(--image-filter);
 }
