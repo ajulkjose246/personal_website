@@ -7,7 +7,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   <title>AJUL K JOSE</title>
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="assets/icon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -19,7 +19,10 @@
 
 <body class="d-flex flex-column h-100 bg-light">
   <div class="loader_bg bg-light">
-    <div class="loader"></div>
+    <div class="loader">
+        <img src="./assets/logo.png" alt="Loader Image">
+            <div class="loading-animation"></div>
+    </div>
   </div>
   <main class="flex-shrink-0">
     <!-- Navigation-->
@@ -43,14 +46,14 @@
             </li>
             <li class="nav-item">
             </li>
-            <div class="modeChange">
-              <li class="theme nav-item">
-                <a class="nav-link">
-                  <i class="bi bi-moon-fill icon"></i>
-                  <span class="text nav-text">Dark Mode</span>
-                </a>
-              </li>
-            </div>
+            <li class="nav-item modeChange">
+                            <label class="ui-switch nav-link">
+                                <input type="checkbox" id="darkModeToggle">
+                                <div class="slider">
+                                    <div class="circle"></div>
+                                </div>
+                            </label>
+                        </li>
           </ul>
         </div>
       </div>
@@ -72,10 +75,10 @@
                 <h2 class="text-primary fw-bolder mb-0">Education</h2>
               </div>
               <div class="col-12 col-md-4 mb-4">
-                <!-- <a class="btn btn-primary px-4 py-3" href="#!">
+                <a class="btn btn-primary px-4 py-3" href="./assets/ajulkjose_c_v.pdf" target="_blank">
                   <div class="d-inline-block bi bi-download me-2"></div>
                   Download Resume
-                </a> -->
+                </a>
                 <!-- </div> -->
               </div>
               <!-- Download resume button-->
@@ -186,6 +189,11 @@
                         User Interface Design
                       </div>
                     </div>
+                    <div class="col mb-4">
+                      <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">
+                        Flutter Development
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <!-- Languages list-->
@@ -249,6 +257,37 @@
                       </div>
                     </div>
                   </div>
+                  <div class="row row-cols-1 row-cols-md-3 mt-4">
+                    <div class="col mb-4 mb-md-0">
+                      <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">
+                        Dart
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="mt-5">
+                  <div class="d-flex align-items-center mb-4">
+                    <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
+                      <i class="bi bi-code-slash"></i>
+                    </div>
+                    <h3 class="fw-bolder mb-0">
+                      <span class="text-gradient d-inline">Frameworks</span>
+                    </h3>
+                  </div>
+                  <div class="row row-cols-1 row-cols-md-3 mb-4">
+                    
+                    <div class="col mb-4 mb-md-0">
+                      <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">
+                        Laravel
+                      </div>
+                    </div>
+                    <div class="col mb-4 mb-md-0">
+                      <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">
+                        Bootstrap
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -261,6 +300,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
   <script src="js/scripts.js"></script>
+  <script>
+        var img = document.querySelector('div a img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]');
+
+var nextScript = img.parentNode.parentNode.nextElementSibling;
+
+if(nextScript) {
+    nextScript.remove();
+    console.clear();
+}
+  
+img.remove();
+    </script>
 </body>
 
 </html>

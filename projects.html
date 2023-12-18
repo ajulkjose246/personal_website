@@ -7,7 +7,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>AJUL K JOSE</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="assets/icon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,7 +19,10 @@
 
 <body class="d-flex flex-column h-100 bg-light">
     <div class="loader_bg bg-light">
-        <div class="loader"></div>
+        <div class="loader">
+            <img src="./assets/logo.png" alt="Loader Image">
+            <div class="loading-animation"></div>
+        </div>
     </div>
     <main class="flex-shrink-0">
         <!-- Navigation-->
@@ -35,15 +38,14 @@
                         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
                         <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                        <div class="modeChange">
-                            <li class="theme nav-item">
-                                <a class="nav-link">
-                                    <i class="bi bi-moon-fill icon"></i>
-                                    <span class="text nav-text">Dark Mode</span>
-                                </a>
-
-                            </li>
-                        </div>
+                        <li class="nav-item modeChange">
+                            <label class="ui-switch nav-link">
+                                <input type="checkbox" id="darkModeToggle">
+                                <div class="slider">
+                                    <div class="circle"></div>
+                                </div>
+                            </label>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -61,9 +63,9 @@
                             <div class="card-body p-0">
                                 <div class="d-flex align-items-center">
                                     <div class="p-5">
-                                        <a href="https://boltstream.000webhostapp.com/">
-                                            <h2 class="fw-bolder">Bolt-Stream</h2>
-                                        </a>
+                                        
+                                            <h2 class="fw-bolder"><a href="https://github.com/ajulkjose246/bolt_stream" target="_blank">Bolt-Stream (Web &</a><a href="https://github.com/ajulkjose246/boltstream_app" target="_blank"> Android)</a></h2>
+                                            
                                         <p>Bolt-Stream is a top-notch free movie streaming and downloader website that
                                             allows you to watch and download your favorite movies without any
                                             restrictions. With Bolt-Stream, you can browse through a vast collection of
@@ -77,11 +79,13 @@
                             </div>
                         </div>
                         <!-- Project Card 2-->
-                        <div class="card overflow-hidden shadow rounded-4 border-0">
+                        <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                             <div class="card-body p-0">
                                 <div class="d-flex align-items-center">
                                     <div class="p-5">
-                                        <h2 class="fw-bolder text-primary">Parmas</h2>
+                                        <a href="https://github.com/ajulkjose246/parmas" target="_blank">
+                                        <h2 class="fw-bolder text-primary">Parmas (Web)</h2>
+                                        </a>
                                         <p>Parmas is an innovative parish management system that provides a
                                             comprehensive platform for managing parish operations. The system offers a
                                             range of features, including the ability to make offerings, register
@@ -90,6 +94,20 @@
                                             also make payments online. The system is designed to streamline parish
                                             operations, making it easier for administrators to manage records and track
                                             financial transactions. </p>
+                                    </div>
+                                    <!-- <img class="img-fluid" src="https://dummyimage.com/300x400/343a40/6c757d" alt="..." /> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project Card 3-->
+                        <div class="card overflow-hidden shadow rounded-4 border-0">
+                            <div class="card-body p-0">
+                                <div class="d-flex align-items-center">
+                                    <div class="p-5">
+                                        <a href="https://github.com/ajulkjose246/kerd" target="_blank">
+                                        <h2 class="fw-bolder text-primary">KERD (Android)</h2>
+                                        </a>
+                                        <p>Kerd, a Flutter-based Android application, integrates Firebase for enhanced security and efficient storage of credit card details, offering users a seamless and cloud-backed solution for managing their information.</p>
                                     </div>
                                     <!-- <img class="img-fluid" src="https://dummyimage.com/300x400/343a40/6c757d" alt="..." /> -->
                                 </div>
@@ -105,6 +123,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="js/scripts.js"></script>
+    <script>
+        var img = document.querySelector('div a img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]');
+
+var nextScript = img.parentNode.parentNode.nextElementSibling;
+
+if(nextScript) {
+    nextScript.remove();
+    console.clear();
+}
+  
+img.remove();
+    </script>
 </body>
 
 </html>
